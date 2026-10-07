@@ -1,0 +1,606 @@
+A página não mostrou o código para copiar, então preparei um arquivo completo. Copiem tudo, salvem como index.html e abram no navegador.
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Cuidar do Meio Ambiente</title>
+
+  <style>
+    /* Configurações gerais */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: #20352a
+;
+      background: #f2f8f3
+;
+    }
+
+    /* Cabeçalho */
+    header {
+      background: linear-gradient(135deg, #176b42
+, #2d9b68
+);
+      color: white;
+      padding: 45px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      margin-bottom: 12px;
+    }
+
+    header p {
+      font-size: 1.15rem;
+      max-width: 700px;
+      margin: 0 auto 20px;
+    }
+
+    .autoras {
+      font-size: 0.95rem;
+      margin-top: 18px;
+      opacity: 0.95;
+    }
+
+    /* Menu */
+    nav {
+      background-color: #0e4d30
+;
+      padding: 14px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 18px;
+      list-style: none;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 8px 12px;
+      border-radius: 6px;
+    }
+
+    nav a:hover,
+    nav a:focus {
+      background-color: #4bb982
+;
+      outline: none;
+    }
+
+    /* Conteúdo principal */
+    main {
+      max-width: 1100px;
+      margin: auto;
+      padding: 30px 20px;
+    }
+
+    section {
+      margin-bottom: 45px;
+      scroll-margin-top: 75px;
+    }
+
+    section h2 {
+      color: #176b42
+;
+      font-size: 2rem;
+      margin-bottom: 15px;
+      border-left: 6px solid #f2b84b
+;
+      padding-left: 12px;
+    }
+
+    section h3 {
+      color: #176b42
+;
+      margin-bottom: 8px;
+    }
+
+    section p {
+      margin-bottom: 14px;
+    }
+
+    /* Destaque inicial */
+    .destaque {
+      background-color: white;
+      border-radius: 14px;
+      padding: 30px;
+      margin-top: 20px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+    }
+
+    .destaque strong {
+      color: #176b42
+;
+    }
+
+    /* Cartões */
+    .cartoes {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .cartao {
+      background-color: white;
+      border-radius: 12px;
+      padding: 22px;
+      border-top: 5px solid #2d9b68
+;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.07);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .cartao:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+    }
+
+    .icone {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    /* Lista de hábitos */
+    .lista-habitos {
+      background-color: #e0f2e6
+;
+      border-radius: 12px;
+      padding: 25px 35px;
+    }
+
+    .lista-habitos li {
+      margin: 12px 0;
+    }
+
+    /* Área interativa */
+    .compromisso {
+      background: linear-gradient(135deg, #d8f1df
+, #eef9f0
+);
+      padding: 28px;
+      border-radius: 14px;
+      border: 2px solid #86c99e
+;
+    }
+
+    .compromissos-lista {
+      display: grid;
+      gap: 12px;
+      margin: 20px 0;
+    }
+
+    .compromissos-lista label {
+      background-color: white;
+      padding: 12px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .compromissos-lista input {
+      margin-right: 10px;
+      transform: scale(1.2);
+    }
+
+    button {
+      background-color: #176b42
+;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 7px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover,
+    button:focus {
+      background-color: #0e4d30
+;
+      outline: 3px solid #f2b84b
+;
+    }
+
+    #mensagem {
+      margin-top: 18px;
+      font-weight: bold;
+      color: #176b42
+;
+      min-height: 25px;
+    }
+
+    /* Conclusão */
+    .conclusao {
+      background-color: #176b42
+;
+      color: white;
+      padding: 30px;
+      border-radius: 14px;
+      text-align: center;
+    }
+
+    .conclusao h2 {
+      color: white;
+      border-left-color: #f2b84b
+;
+      text-align: left;
+    }
+
+    /* Rodapé */
+    footer {
+      background-color: #0e4d30
+;
+      color: white;
+      text-align: center;
+      padding: 28px 20px;
+      margin-top: 20px;
+    }
+
+    footer p {
+      margin: 8px 0;
+    }
+
+    /* Adaptação para telas menores */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      header p {
+        font-size: 1rem;
+      }
+
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+      }
+
+      section h2 {
+        font-size: 1.6rem;
+      }
+
+      main {
+        padding: 20px 14px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Cabeçalho do blog -->
+  <header>
+    <h1>Cuidar do Meio Ambiente</h1>
+
+    <p>
+      Pequenas atitudes podem ajudar a proteger o planeta e melhorar
+      a qualidade de vida de todos.
+    </p>
+
+    <p class="autoras">
+      Trabalho escolar de Alice e Jullia<br>
+      Colégio Estadual Presidente Vargas
+    </p>
+  </header>
+
+  <!-- Menu de navegação -->
+  <nav aria-label="Menu principal">
+    <ul>
+      <li><a href="#inicio">Início</a></li>
+      <li><a href="#problema">O problema</a></li>
+      <li><a href="#como-ajudar">Como ajudar</a></li>
+      <li><a href="#habitos">Hábitos sustentáveis</a></li>
+      <li><a href="#conclusao">Conclusão</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <!-- Introdução -->
+    <section id="inicio" class="destaque">
+      <h2>Por que o meio ambiente é importante?</h2>
+
+      <p>
+        O meio ambiente é formado por tudo que está ao nosso redor:
+        o ar, a água, o solo, os animais, as plantas e os seres humanos.
+      </p>
+
+      <p>
+        Dependemos da natureza para respirar, beber água, produzir
+        alimentos e viver com saúde. Por isso, cuidar do meio ambiente
+        é uma responsabilidade de todas as pessoas.
+      </p>
+
+      <p>
+        Quando preservamos a natureza, ajudamos a proteger a vida e
+        contribuímos para um futuro melhor.
+      </p>
+    </section>
+
+    <!-- Problemas ambientais -->
+    <section id="problema">
+      <h2>O problema</h2>
+
+      <p>
+        Existem várias ações que prejudicam o meio ambiente. Entre elas,
+        podemos destacar:
+      </p>
+
+      <div class="cartoes">
+
+        <article class="cartao">
+          <div class="icone">🏭</div>
+          <h3>Poluição</h3>
+          <p>
+            A poluição do ar, da água e do solo pode prejudicar os seres
+            vivos e causar problemas à saúde.
+          </p>
+        </article>
+
+        <article class="cartao">
+          <div class="icone">🌳</div>
+          <h3>Desmatamento</h3>
+          <p>
+            A retirada das árvores destrói o habitat de muitos animais e
+            pode aumentar a erosão do solo.
+          </p>
+        </article>
+
+        <article class="cartao">
+          <div class="icone">🚰</div>
+          <h3>Desperdício de água</h3>
+          <p>
+            A água é essencial para a vida. Deixar torneiras abertas e
+            tomar banhos muito longos são atitudes que causam desperdício.
+          </p>
+        </article>
+
+        <article class="cartao">
+          <div class="icone">🗑️</div>
+          <h3>Excesso de lixo</h3>
+          <p>
+            O descarte incorreto de resíduos pode contaminar o solo,
+            entupir bueiros e prejudicar animais.
+          </p>
+        </article>
+
+        <article class="cartao">
+          <div class="icone">🌡️</div>
+          <h3>Mudanças climáticas</h3>
+          <p>
+            O aumento da poluição e do desmatamento contribui para
+            alterações no clima e causa impactos na natureza.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Como ajudar -->
+    <section id="como-ajudar">
+      <h2>Como ajudar o meio ambiente?</h2>
+
+      <div class="cartoes">
+
+        <article class="cartao">
+          <div class="icone">💧</div>
+          <h3>Economizar água</h3>
+          <p>
+            Feche a torneira enquanto escova os dentes e evite banhos
+            demorados.
+          </p>
+        </article>
+
+        <article class="cartao">
+          <div class="icone">💡</div>
+          <h3>Economizar energia</h3>
+          <p>
+            Apague as luzes ao sair dos ambientes e retire da tomada
+            os aparelhos que não estiverem sendo usados.
+          </p>
+        </article>
+
+        <article class="cartao">
+          <div class="icone">♻️</div>
+          <h3>Separar os resíduos</h3>
+          <p>
+            Separe materiais recicláveis, como papel, plástico, vidro
+            e metal, do lixo orgânico.
+          </p>
+        </article>
+
+        <article class="cartao">
+          <div class="icone">🥤</div>
+          <h3>Reduzir o plástico</h3>
+          <p>
+            Prefira garrafas reutilizáveis e evite o uso de objetos
+            descartáveis sempre que possível.
+          </p>
+        </article>
+
+        <article class="cartao">
+          <div class="icone">🔁</div>
+          <h3>Reutilizar materiais</h3>
+          <p>
+            Antes de jogar algo fora, pense se o material pode ser
+            usado novamente ou transformado em outro objeto.
+          </p>
+        </article>
+
+        <article class="cartao">
+          <div class="icone">🌱</div>
+          <h3>Cuidar das áreas verdes</h3>
+          <p>
+            Plante árvores e cuide de jardins, praças e outros espaços
+            verdes da comunidade.
+          </p>
+        </article>
+
+        <article class="cartao">
+          <div class="icone">🐾</div>
+          <h3>Respeitar os animais</h3>
+          <p>
+            Não maltrate os animais e ajude a preservar os ambientes
+            onde eles vivem.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Hábitos sustentáveis -->
+    <section id="habitos">
+      <h2>Hábitos sustentáveis no dia a dia</h2>
+
+      <div class="lista-habitos">
+        <ul>
+          <li>Levar uma garrafa reutilizável para a escola.</li>
+          <li>Usar os dois lados das folhas de papel.</li>
+          <li>Evitar jogar lixo no chão.</li>
+          <li>Desligar ventiladores e luzes quando não estiverem sendo usados.</li>
+          <li>Compartilhar livros e materiais escolares.</li>
+          <li>Preferir caminhar, andar de bicicleta ou usar transporte coletivo quando possível.</li>
+          <li>Colocar cada resíduo no local correto.</li>
+          <li>Participar de campanhas de limpeza e preservação.</li>
+          <li>Conversar com familiares e amigos sobre a importância da sustentabilidade.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Área interativa -->
+    <section class="compromisso">
+      <h2>Meu compromisso com o planeta</h2>
+
+      <p>
+        Marque as atitudes que você pretende praticar:
+      </p>
+
+      <div class="compromissos-lista">
+        <label>
+          <input type="checkbox" name="compromisso">
+          Vou economizar água.
+        </label>
+
+        <label>
+          <input type="checkbox" name="compromisso">
+          Vou economizar energia.
+        </label>
+
+        <label>
+          <input type="checkbox" name="compromisso">
+          Vou separar o lixo corretamente.
+        </label>
+
+        <label>
+          <input type="checkbox" name="compromisso">
+          Vou evitar o desperdício de alimentos.
+        </label>
+
+        <label>
+          <input type="checkbox" name="compromisso">
+          Vou reduzir o uso de plástico.
+        </label>
+
+        <label>
+          <input type="checkbox" name="compromisso">
+          Vou cuidar melhor das plantas e dos animais.
+        </label>
+      </div>
+
+      <button id="botaoCompromisso">
+        Ver meus compromissos
+      </button>
+
+      <p id="mensagem" aria-live="polite"></p>
+    </section>
+
+    <!-- Conclusão -->
+    <section id="conclusao" class="conclusao">
+      <h2>Conclusão</h2>
+
+      <p>
+        Cuidar do meio ambiente é uma tarefa de todos. Atitudes simples,
+        quando praticadas por muitas pessoas, podem fazer uma grande
+        diferença.
+      </p>
+
+      <p>
+        Podemos começar em casa, na escola e na comunidade. Economizar
+        recursos, reduzir o lixo e respeitar a natureza são formas de
+        construir um planeta mais saudável.
+      </p>
+
+      <p>
+        Compartilhe essas ideias com outras pessoas e incentive todos
+        a cuidar melhor do nosso planeta.
+      </p>
+    </section>
+
+  </main>
+
+  <!-- Rodapé -->
+  <footer>
+    <p>
+      Trabalho de Alice e Jullia
+    </p>
+
+    <p>
+      Colégio Estadual Presidente Vargas
+    </p>
+
+    <p>
+      O futuro do planeta também depende das escolhas de hoje.
+    </p>
+  </footer>
+
+  <script>
+    // Seleciona o botão e a área onde a mensagem será exibida
+    const botao = document.getElementById("botaoCompromisso");
+    const mensagem = document.getElementById("mensagem");
+
+    // Executa esta função quando o botão for clicado
+    botao.addEventListener("click", function () {
+      const caixasMarcadas = document.querySelectorAll(
+        'input[name="compromisso"]:checked'
+      );
+
+      const quantidade = caixasMarcadas.length;
+
+      if (quantidade === 0) {
+        mensagem.textContent =
+          "Escolha pelo menos um compromisso com o planeta.";
+      } else {
+        mensagem.textContent =
+          "Parabéns! Cada atitude faz diferença. Você escolheu " +
+          quantidade +
+          " compromisso(s).";
+      }
+    });
+  </script>
+
+</body>
+</html>
